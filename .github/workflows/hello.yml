@@ -1,0 +1,21 @@
+name: Hello Aha Workflow
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  greeting:
+    runs-on: my-laptop
+    steps:
+      - name: Say Hello
+        run: echo "Aha say Hello to the World!"
+
+      - name: Show Date and Time
+        run: echo "Current time is $(date)"
+
+      - name: Show GitHub Info
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref }}"
+          echo "Commit: ${{ github.sha }}"
